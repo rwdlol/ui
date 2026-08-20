@@ -1,7 +1,25 @@
+// import { useState, useEffect } from "react";
+import { HashRouter, Routes, Route } from "react-router";
 import { Button } from "../../src/component/Button";
 import { Header } from "../../src/section/Header";
 import { NotFound } from "../../src/page/NotFound";
-import { HashRouter, Route, Routes } from "react-router";
+
+// export default function App() {
+//   const [route, setRoute] = useState(window.location.hash || "#/");
+//   useEffect(() => {
+//     const handleHashChange = () => setRoute(window.location.hash || "#/");
+//     window.addEventListener("hashchange", handleHashChange);
+//     return () => window.removeEventListener("hashchange", handleHashChange);
+//   }, []);
+//   return (
+//     <div style={{ fontFamily: "sans-serif", padding: "2rem" }}>
+//       <h1>@rwdlol/ui Live Demo</h1>
+
+//       {/* Route Switcher */}
+//       {route === "#/" || route === "" ? <HomeView /> : <NotFoundView />}
+//     </div>
+//   );
+// }
 
 export default function App() {
   return (
@@ -12,7 +30,6 @@ export default function App() {
           padding: "2rem",
           display: "flex",
           flexDirection: "column",
-          gap: "2rem",
         }}
       >
         <Routes>
