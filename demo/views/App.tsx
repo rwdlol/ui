@@ -1,26 +1,26 @@
 import { Button } from "../../src/component/Button";
 import { Header } from "../../src/section/Header";
 import { NotFound } from "../../src/page/NotFound";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 
 export default function App() {
   return (
-    <div
-      style={{
-        fontFamily: "sans-serif",
-        padding: "2rem",
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-      }}
-    >
-      <BrowserRouter>
+    <HashRouter>
+      <main
+        style={{
+          fontFamily: "sans-serif",
+          padding: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          gap: "2rem",
+        }}
+      >
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="*" element={<NotFoundView />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </main>
+    </HashRouter>
   );
 }
 

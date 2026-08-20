@@ -1,6 +1,7 @@
 node_modules/
 .pnpm-store/
 dist/
+demo-dist/
 demo/dist/
 demo/bundle.js
 demo/bundle.js.map
