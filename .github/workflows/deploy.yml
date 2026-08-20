@@ -36,7 +36,7 @@ jobs:
         run: npm ci --prefer-offline
 
       - name: Build Demo
-        run: node demo/build.js
+        run: npm run build:demo
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
