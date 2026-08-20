@@ -1,29 +1,12 @@
-// import { useState, useEffect } from "react";
-import { HashRouter, Routes, Route } from "react-router";
+import { Router, Link, Route, Switch } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { Button } from "../../src/component/Button";
 import { Header } from "../../src/section/Header";
 import { NotFound } from "../../src/page/NotFound";
 
-// export default function App() {
-//   const [route, setRoute] = useState(window.location.hash || "#/");
-//   useEffect(() => {
-//     const handleHashChange = () => setRoute(window.location.hash || "#/");
-//     window.addEventListener("hashchange", handleHashChange);
-//     return () => window.removeEventListener("hashchange", handleHashChange);
-//   }, []);
-//   return (
-//     <div style={{ fontFamily: "sans-serif", padding: "2rem" }}>
-//       <h1>@rwdlol/ui Live Demo</h1>
-
-//       {/* Route Switcher */}
-//       {route === "#/" || route === "" ? <HomeView /> : <NotFoundView />}
-//     </div>
-//   );
-// }
-
 export default function App() {
   return (
-    <HashRouter>
+    <Router hook={useHashLocation}>
       <main
         style={{
           fontFamily: "sans-serif",
@@ -32,12 +15,20 @@ export default function App() {
           flexDirection: "column",
         }}
       >
-        <Routes>
-          <Route path="/" element={<HomeView />} />
-          <Route path="*" element={<NotFoundView />} />
-        </Routes>
+        <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+          <Link href="/">home</Link>
+          <Link href="/users/1">profile</Link>
+          <Link href="/404">404</Link>
+        </div>
+        <Switch>
+          <Route path="/" children={<HomeView />} />
+          <Route path="/users/:name">
+            {(params) => <>Hello, {params.name}!</>}
+          </Route>
+          <Route path="*">{() => <NotFoundView />}</Route>
+        </Switch>
       </main>
-    </HashRouter>
+    </Router>
   );
 }
 
