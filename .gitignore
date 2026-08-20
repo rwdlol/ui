@@ -1,0 +1,14 @@
+node_modules/
+.pnpm-store/
+dist/
+demo/dist/
+demo/bundle.js
+demo/bundle.js.map
+demo/bundle.css
+demo/bundle.css.map
+*.map
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store

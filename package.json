@@ -1,0 +1,52 @@
+{
+  "name": "@rwdlol/ui",
+  "version": "1.0.13+testing",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./component": {
+      "types": "./dist/component/index.d.ts",
+      "import": "./dist/component/index.js"
+    },
+    "./component/styles.css": "./dist/component/index.css",
+    "./section": {
+      "types": "./dist/section/index.d.ts",
+      "import": "./dist/section/index.js"
+    },
+    "./section/styles.css": "./dist/section/index.css",
+    "./page": {
+      "types": "./dist/page/index.d.ts",
+      "import": "./dist/page/index.js"
+    },
+    "./page/styles.css": "./dist/page/index.css"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "demo": "node demo/dev.js"
+  },
+  "peerDependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "esbuild-sass-plugin": "^3.7.0",
+    "react-router": "^8.3.0",
+    "sass": "^1.103.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.3",
+    "esbuild": "^0.28.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.27.7": true,
+    "@parcel/watcher@2.6.0": true
+  }
+}
