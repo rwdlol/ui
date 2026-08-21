@@ -6,26 +6,24 @@ import { resolve } from "node:path";
 export default defineConfig({
   plugins: [
     react(),
-    dts({
-      insertTypesEntry: true,
-      include: ["src"],
-    }),
-  ],
+    !process.env.STORYBOOK &&
+      dts({
+        insertTypesEntry: true,
+        include: ["src"],
+        exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
+      }),
+  ].filter(Boolean),
   css: {
-    transformer: "lightningcss",
-    lightningcss: {
-      targets: {
-        chrome: 90 << 16,
-        firefox: 88 << 16,
-        safari: 14 << 16,
-      },
+    modules: {
+      localsConvention: "camelCaseOnly",
+      generateScopedName: "[name]__[local]___[hash:base64:5]",
     },
   },
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    minify: "esbuild",
-    cssMinify: "lightningcss",
+    cssCodeSplit: true,
+    sourcemap: false,
     lib: {
       entry: {
         index: resolve(__dirname, "src/index.ts"),
@@ -33,19 +31,13 @@ export default defineConfig({
         "section/index": resolve(__dirname, "src/section/index.ts"),
         "page/index": resolve(__dirname, "src/page/index.ts"),
       },
-      formats: ["es"],
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: {
-        entryFileNames: "[name].js",
-        chunkFileNames: "chunks/[name]-[hash].js",
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name?.endsWith(".css")) {
-            return "[name][extname]";
-          }
-          return "assets/[name]-[hash][extname]";
-        },
+        preserveModules: false,
+        exports: "named",
       },
     },
   },
