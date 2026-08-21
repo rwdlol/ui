@@ -1,6 +1,17 @@
 {
   "name": "@rwdlol/ui",
-  "version": "1.0.0",
+  "version": "1.0.14",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rwdlol/ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rwdlol/ui/issues"
+  },
+  "homepage": "https://github.com/rwdlol/ui#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "files": [
     "dist"

@@ -1,0 +1,9 @@
+.hero {
+  background-color: var(--rwdlol-color-neutral-50, blue);
+  padding: var(--rwdlol-spacing-xl, 4rem 1rem);
+}
+
+.title {
+  font-size: var(--rwdlol-font-size-2xl, 2.5rem);
+  color: var(--rwdlol-color-neutral-900, #2563eb);
+}

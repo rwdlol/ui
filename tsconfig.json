@@ -11,9 +11,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
+    "allowJs": true,
     "skipLibCheck": true,
     "isolatedModules": true
   },
-  "include": ["src"],
+  "include": ["src/**/*", "src/global.d.ts", ".storybook/**/*"],
   "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx"]
 }
