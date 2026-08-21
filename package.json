@@ -1,16 +1,18 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "name": "@rwdlol/ui",
   "version": "1.0.14",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rwdlol/ui.git"
+    "url": "git+https://github.com/rwdlol/ui.git"
   },
   "bugs": {
     "url": "https://github.com/rwdlol/ui/issues"
   },
   "homepage": "https://github.com/rwdlol/ui#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "type": "module",
   "files": [

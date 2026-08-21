@@ -27,4 +27,6 @@ npm install @rwdlol/ui
 
 ## License
 
-MIT © [Rawand](https://x.com/rwd_lol)
+MIT [Rawand](https://x.com/rwd_lol)
+
+[open-color](https://github.com/yeun/open-color)
