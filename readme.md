@@ -1,14 +1,27 @@
-# 1. Install all clean dependencies
-npm install
+# @rwdlol/ui
 
-# 2. Run unit tests
-npm run test
+React component library built with TypeScript, Vite, SCSS Modules, Vitest, and Storybook
 
-# 3. Run linting & formatting checks
-npm run lint
+## Installation
 
-# 4. Start Storybook
-npm run storybook
+```bash
+npm install @rwdlol/ui
+```
 
-# 5. Build for production (Generates tree-shakable ESM/CJS & .d.ts)
-npm run build
+## Development Scripts
+
+| Command                   | Action                                                                    |
+| ------------------------- | ------------------------------------------------------------------------- |
+| `npm run dev`             | Starts Vite in watch mode to rebuild `/dist` on source changes            |
+| `npm run build`           | Type-checks with `tsc --noEmit` and bundles ESM, CJS, and `.d.ts` outputs |
+| `npm run test`            | Executes unit tests via Vitest                                            |
+| `npm run test:watch`      | Starts Vitest in interactive watch mode                                   |
+| `npm run storybook`       | Runs Storybook locally at `http://localhost:6006`                         |
+| `npm run build-storybook` | Generates static Storybook assets into `/storybook-static`                |
+| `npm run lint`            | Runs ESLint and Stylelint                                                 |
+| `npm run lint:fix`        | Automatically fixes JS/TS and SCSS lint errors                            |
+| `npm run format`          | Formats all code using Prettier                                           |
+
+## License
+
+MIT © [Rawand](https://x.com/rwd_lol)
