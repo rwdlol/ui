@@ -28,21 +28,18 @@
   }
 
   &Sm {
-    height: 2rem;
-    padding: 0 0.75rem;
-    font-size: 0.875rem;
+    padding: 4px;
+    font-size: 14rem;
   }
 
   &Md {
-    height: 2.5rem;
-    padding: 0 1rem;
-    font-size: 1rem;
+    padding: 8px;
+    font-size: 16rem;
   }
 
   &Lg {
-    height: 3rem;
-    padding: 0 1.5rem;
-    font-size: 1.125rem;
+    padding: 10px;
+    font-size: 18rem;
   }
 
   &:disabled {

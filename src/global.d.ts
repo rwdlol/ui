@@ -1,3 +1,5 @@
+/// <reference types="@testing-library/jest-dom/vitest" />
+
 declare module "*.module.scss" {
   const classes: { readonly [key: string]: string };
   export default classes;

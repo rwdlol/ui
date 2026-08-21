@@ -31,10 +31,10 @@ const Swatch = ({ name, cssVar }: { name: string; cssVar: string }) => (
   </div>
 );
 
-export const ColorsByNameView = () => (
+export const Colors = () => (
   <div
     style={{
-      fontFamily: "system-ui, -apple-system, sans-serif",
+      fontFamily: "sans-serif",
       color: "#212529",
       display: "flex",
       flexDirection: "column",

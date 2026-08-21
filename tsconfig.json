@@ -13,8 +13,15 @@
     "esModuleInterop": true,
     "allowJs": true,
     "skipLibCheck": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["@testing-library/jest-dom/vitest"]
   },
-  "include": ["src/**/*", "src/global.d.ts", ".storybook/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx"]
+  "include": [
+    "src/**/*",
+    "src/global.d.ts",
+    ".storybook/**/*",
+    "demo/**/*",
+    "vitest.setup.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

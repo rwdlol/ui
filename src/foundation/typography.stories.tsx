@@ -1,80 +1,42 @@
 import type { Meta } from "@storybook/react";
 
-const COLOR_NAMES = [
-  "gray",
-  "red",
-  "pink",
-  "grape",
-  "violet",
-  "indigo",
-  "blue",
-  "cyan",
-  "teal",
-  "green",
-  "lime",
-  "yellow",
-  "orange",
-] as const;
-const SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const;
-const BASE_COLORS = ["white", "black"] as const;
-
-const Swatch = ({ name, cssVar }: { name: string; cssVar: string }) => (
-  <div style={{ display: "grid", gap: "4px", width: "100%" }}>
-    <div
-      style={{
-        height: "80px",
-        border: "1px solid black",
-        backgroundColor: `var(${cssVar})`,
-      }}
-    />
-    <div>{name}</div>
-  </div>
-);
-
-export const ColorsByNameView = () => (
+export const Typography = () => (
   <div
     style={{
-      fontFamily: "system-ui, -apple-system, sans-serif",
+      fontFamily: "sans-serif",
       color: "#212529",
       display: "flex",
       flexDirection: "column",
       gap: "8px",
     }}
   >
-    <div>
-      <h2>Base</h2>
-      <div style={{ display: "flex", gap: "8px" }}>
-        {BASE_COLORS.map((base) => (
-          <Swatch key={base} name={base} cssVar={`--rwdlol-color-${base}`} />
-        ))}
-      </div>
-    </div>
-    {COLOR_NAMES.map((color) => (
-      <div key={color}>
-        <h2>{color}</h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(10, 1fr)",
-            gap: "8px",
-          }}
-        >
-          {SHADES.map((shade) => (
-            <Swatch
-              key={shade}
-              name={`${shade}`}
-              cssVar={`--rwdlol-color-${color}-${shade}`}
-            />
-          ))}
-        </div>
-      </div>
-    ))}
+    <p>text-9xl</p>
+    <p>text-8xl</p>
+    <p>text-7xl</p>
+    <p>text-6xl</p>
+    <p>text-5xl</p>
+    <p>text-4xl</p>
+    <p>text-3xl</p>
+    <p>text-2xl</p>
+    <p>text-xl</p>
+    <p>text-lg</p>
+    <p>text-md</p>
+    <p>text-sm</p>
+    <p>text-xs</p>
+    <hr />
+    <h1>This is a heading h1</h1>
+    <h2>This is a heading h2</h2>
+    <h3>This is a heading h3</h3>
+    <h4>This is a heading h4</h4>
+    <h5>This is a heading h5</h5>
+    <h6>This is a heading h6</h6>
+    <p>This is a paragraph.</p>
   </div>
 );
 
-const meta: Meta<typeof ColorsByNameView> = {
+const meta: Meta<typeof Typography> = {
   title: "Foundation/Typography",
-  component: ColorsByNameView,
+  component: Typography,
   tags: ["autodocs"],
   parameters: {
     docs: {

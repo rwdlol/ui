@@ -1,9 +1,9 @@
 .hero {
-  background-color: var(--rwdlol-color-neutral-50, blue);
-  padding: var(--rwdlol-spacing-xl, 4rem 1rem);
+  background-color: var(--rwdlol-color-gray-200, blue);
+  padding: 40px 20px;
 }
 
 .title {
-  font-size: var(--rwdlol-font-size-2xl, 2.5rem);
-  color: var(--rwdlol-color-neutral-900, #2563eb);
+  font-size: var(--rwdlol-font-size-2xl, 16rem);
+  color: var(--rwdlol-color-gray-900, blue);
 }

@@ -8,6 +8,8 @@ const preview: Preview = {
         order: [
           "Intro",
           ["Welcome", "Installation", "Changelog"],
+          "Foundation",
+          ["Color", "Typography"],
           "Components",
           "Sections",
           "Pages",

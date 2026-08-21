@@ -22,14 +22,14 @@ export default defineConfig({
   build: {
     outDir: "dist",
     emptyOutDir: true,
-    cssCodeSplit: true,
+    cssCodeSplit: false, // bundle all CSS into one file
     sourcemap: false,
     lib: {
       entry: {
-        index: resolve(__dirname, "src/index.ts"),
-        "component/index": resolve(__dirname, "src/component/index.ts"),
-        "section/index": resolve(__dirname, "src/section/index.ts"),
-        "page/index": resolve(__dirname, "src/page/index.ts"),
+        index: resolve(import.meta.dirname, "src/index.ts"),
+        "component/index": resolve(import.meta.dirname, "src/component/index.ts"),
+        "section/index": resolve(import.meta.dirname, "src/section/index.ts"),
+        "page/index": resolve(import.meta.dirname, "src/page/index.ts"),
       },
       formats: ["es", "cjs"],
     },
@@ -38,6 +38,12 @@ export default defineConfig({
       output: {
         preserveModules: false,
         exports: "named",
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith(".css")) {
+            return "styles.css";
+          }
+          return "[name].[ext]";
+        },
       },
     },
   },

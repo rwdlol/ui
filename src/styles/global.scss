@@ -212,3 +212,21 @@ $theme-tokens: (
 //   padding: rwd(spacing, lg);
 //   border-radius: rwd(radius, md);
 // }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 6.25%;
+}
+
+body {
+  font-size: 16rem;
+  line-height: 1.5;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
